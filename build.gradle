@@ -1,0 +1,24 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   providedCompile 'javax.servlet:servlet-api:2.5'
+   compile 'org.springframework.security:spring-security-core:3.1.4.RELEASE'
+	compile group: "org.springframework", name: "spring-webmvc", version: "4.0.5.RELEASE"
+		compile group: "com.fasterxml.jackson.core", name: "jackson-databind", version: "2.4.0"
+   compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
+   runtime 'javax.servlet:jstl:1.2'
+   	compile group: "org.springframework.security", name: "spring-security-web", version: "3.2.4.RELEASE"
+    compile group: "org.springframework.security", name: "spring-security-config", version: "3.2.4.RELEASE"
+    compile group: "org.springframework.security", name: "spring-security-openid", version: "3.2.4.RELEASE"
+    compile group: "org.springframework.security.oauth", name: "spring-security-oauth", version: "2.0.1.RELEASE"
+		compile group: "org.hibernate", name: "hibernate-core", version: "4.3.5.Final"
+}
+
+
+jettyRunWar.contextPath = '' //otherwise defaults to name of project
